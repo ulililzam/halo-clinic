@@ -23,19 +23,11 @@ Halo Clinic adalah aplikasi kesehatan berbasis Flutter yang mengusung arsitektur
 - **Authentication** - Login, Register, Forgot Password
 - **Dashboard** - Quick access ke semua fitur
 - **Artikel Kesehatan** - Baca artikel kesehatan terkini
+- **BMI** - Ukur Berat ideal
+- **Tes Kesehatan Mental** - Tes Stres, Tes Depresi
 - **Konsultasi Dokter** - Booking konsultasi dengan dokter
-- **Chat** - Chat langsung dengan dokter
 - **Profile** - Manage profil dan pengaturan
 
-## Screenshots
-
-```
-+------------------+  +------------------+  +------------------+
-|                  |  |                  |  |                  |
-|   Login Screen   |  |    Dashboard     |  |  Consultation    |
-|                  |  |                  |  |                  |
-+------------------+  +------------------+  +------------------+
-```
 
 ## Arsitektur
 
