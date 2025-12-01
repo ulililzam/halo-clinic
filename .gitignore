@@ -1,0 +1,111 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+
+# Note: for Flutter apps (not packages) it is recommended to commit `pubspec.lock`
+# so that CI and developers use the same dependency versions. Do NOT ignore it.
+
+# Generated package files
+.packages
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/.gradle
+/android/.idea
+/android/local.properties
+/android/app/build/
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Gradle
+/.gradle
+**/gradle-wrapper.jar
+
+# Keystore and signing files (often local) — keep out of repo and store securely
+*.jks
+*.keystore
+
+# Google services / firebase config — consider storing securely
+# google-services.json
+# GoogleService-Info.plist
+## iOS / macOS/Xcode
+# Xcode
+/ios/Pods/
+/ios/Flutter/Flutter.framework
+/ios/Flutter/Flutter.podspec
+/ios/Flutter/Generated.xcconfig
+/ios/Runner.xcworkspace/
+/ios/Runner.xcworkspace/contents.xcworkspacedata
+xcuserdata/
+DerivedData/
+# Xcode device support (large)
+/ios/DeviceSupport/
+
+# macOS
+.DS_Store
+
+## Flutter build outputs
+/build/
+/ios/Flutter/engine/Flutter.framework
+
+# Linux
+/.dart_tool/
+
+# Windows
+/.dart_tool/
+
+# Editor swap/backup files
+*~
+.swp
+
+# IDEs
+.idea/
+*.iml
+# VS Code: keep commented if you want to include workspace settings, tasks, or launch configs
+# .vscode/
+
+# Generated plugin registrant and generated files
+**/generated_plugin_registrant.dart
+**/generated_plugin_registrant.*
+
+# Keep any secret files or local config out of git. Example local env files:
+# .env
+# .env.local
+
