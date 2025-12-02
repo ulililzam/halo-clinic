@@ -26,6 +26,7 @@ Halo Clinic adalah aplikasi kesehatan berbasis Flutter yang mengusung arsitektur
 - **BMI** - Ukur Berat ideal
 - **Tes Kesehatan Mental** - Tes Stres, Tes Depresi
 - **Konsultasi Dokter** - Booking konsultasi dengan dokter
+- **Push Notifications** - Real-time notifications dengan Firebase FCM
 - **Profile** - Manage profil dan pengaturan
 
 
@@ -71,6 +72,7 @@ lib/
 **Lihat dokumentasi lengkap:**
 - [STRUKTUR_PROJECT.md](STRUKTUR_PROJECT.md) - Struktur lengkap & penjelasan
 - [CHEATSHEET.md](CHEATSHEET.md) - Quick reference untuk development
+- [NOTIFICATION_SETUP.md](NOTIFICATION_SETUP.md) - Setup Firebase & Push Notifications (Developer Friendly!)
 - [staterpack.md](staterpack.md) - MVVM guide lengkap
 
 ## Menjalankan Proyek
@@ -79,6 +81,7 @@ lib/
 - Flutter SDK 3.7.2+ (cek dengan `flutter --version`)
 - Android Studio / VS Code dengan Flutter extension
 - Emulator Android/iOS atau perangkat fisik
+- **Firebase Project** (untuk fitur notifikasi) - [Setup Guide](NOTIFICATION_SETUP.md)
 
 ### 2. Clone & instalasi dependencies
 ```bash
@@ -87,7 +90,16 @@ cd halo_clinic
 flutter pub get
 ```
 
-### 3. Jalankan aplikasi
+### 3. Setup Firebase (untuk notifikasi)
+> **Penting untuk developer pemula!** Ikuti panduan lengkap di [NOTIFICATION_SETUP.md](NOTIFICATION_SETUP.md)
+
+Quick setup:
+1. Download `google-services.json` dari Firebase Console
+2. Letakkan di `android/app/google-services.json`
+3. Download `GoogleService-Info.plist` dari Firebase Console
+4. Letakkan di `ios/Runner/GoogleService-Info.plist`
+
+### 4. Jalankan aplikasi
 ```bash
 # Run di perangkat yang terdeteksi otomatis
 flutter run
@@ -98,7 +110,7 @@ flutter run -d ios         # iOS Simulator
 flutter run -d emulator-5554  # Android emulator
 ```
 
-### 4. Build paket rilis
+### 5. Build paket rilis
 ```bash
 flutter build apk --release
 flutter build ios --release   # membutuhkan Xcode + akun Apple
@@ -112,7 +124,13 @@ flutter build ios --release   # membutuhkan Xcode + akun Apple
 get: ^4.6.5                    # State management & routing
 http: ^1.1.0                   # HTTP client
 shared_preferences: ^2.2.2     # Local storage
-intl: ^0.18.0                  # Date/number formatting
+intl: ^0.19.0                  # Date/number formatting
+firebase_core: ^2.32.0         # Firebase core
+firebase_messaging: ^14.7.10   # Push notifications
+flutter_fcm_notifications:     # Custom FCM plugin
+  git:
+    url: https://github.com/ulililzam/flutter_fcm_notifications.git
+    ref: main
 ```
 
 ## Alur Navigasi
@@ -132,13 +150,13 @@ Home (Bottom Navigation)
 ## Development
 
 ### Add New Feature
-1. Buat folder module di `lib/app/modules/[feature_name]/`
-2. Buat models, services, controllers, views
-3. Register routes di `app_routes.dart` dan `app_pages.dart`
-4. Add binding untuk dependency injection
+## Todo / Roadmap
 
-### Code Style
-- Follow Flutter style guide
+- [ ] Integrate dengan backend API
+- [x] Implement push notifications (Firebase FCM)
+- [ ] Add unit tests
+- [ ] Add integration tests
+- [ ] Implement CI/CDe guide
 - Use `const` constructors
 - Implement proper error handling
 - Add comments untuk kode kompleks
@@ -146,7 +164,6 @@ Home (Bottom Navigation)
 ## Todo / Roadmap
 
 - [ ] Integrate dengan backend API
-- [ ] Implement push notifications
 - [ ] Add unit tests
 - [ ] Add integration tests
 - [ ] Implement CI/CD
@@ -159,20 +176,6 @@ Home (Bottom Navigation)
 ## License
 
 This project is licensed under the MIT License.
-
-## Team
-- **Developer**: Tupex
-- **Designer**: Tupex
-- **Project Manager**: Tupex
-
-## Contact
-
-Untuk pertanyaan atau support, hubungi:
-- WA: +6282220146199
-- Email: support@haloclinic.com
-- Website: https://haloclinic.com
-
----
 
 <div align="center">
   Made with Flutter

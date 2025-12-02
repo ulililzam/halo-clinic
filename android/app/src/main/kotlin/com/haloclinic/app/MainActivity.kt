@@ -1,4 +1,4 @@
-package com.example.halo_clinic
+package com.haloclinic.app
 
 import io.flutter.embedding.android.FlutterActivity
 

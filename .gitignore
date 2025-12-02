@@ -62,9 +62,10 @@ app.*.map.json
 *.jks
 *.keystore
 
-# Google services / firebase config — consider storing securely
-# google-services.json
-# GoogleService-Info.plist
+# Google services / firebase config — keep out of repo for security
+# Use .example files as template
+google-services.json
+GoogleService-Info.plist
 ## iOS / macOS/Xcode
 # Xcode
 /ios/Pods/

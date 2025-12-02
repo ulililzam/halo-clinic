@@ -31,9 +31,11 @@ abstract class AppRoutes {
   static const editProfile = '/profile/edit';
   static const consultationHistory = '/profile/history';
   static const paymentMethod = '/profile/payment-method';
-  static const notifications = '/profile/notifications';
   static const help = '/help';
   static const about = '/about';
+  
+  // Notification Routes
+  static const notifications = '/notifications';
   
   // Medicine Routes
   static const medicineList = '/medicines';

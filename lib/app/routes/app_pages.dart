@@ -35,6 +35,8 @@ import '../modules/stress_test/views/stress_test_intro_screen.dart';
 import '../modules/stress_test/views/stress_test_questions_screen.dart';
 import '../modules/stress_test/views/stress_test_result_screen.dart';
 import '../modules/stress_test/bindings/stress_test_binding.dart';
+import '../modules/notifications/views/notification_screen.dart';
+import '../modules/notifications/bindings/notification_binding.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -177,6 +179,13 @@ class AppPages {
       name: AppRoutes.stressTestResult,
       page: () => const StressTestResultScreen(),
       binding: StressTestBinding(),
+    ),
+    
+    // Notification Pages
+    GetPage(
+      name: AppRoutes.notifications,
+      page: () => const NotificationScreen(),
+      binding: NotificationBinding(),
     ),
   ];
 }

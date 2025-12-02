@@ -20,8 +20,18 @@ dependencies:
   # Local Storage
   shared_preferences: ^2.2.2
   
+  # Firebase
+  firebase_core: ^2.32.0
+  firebase_messaging: ^14.7.10
+  
+  # FCM Notifications Plugin
+  flutter_fcm_notifications:
+    git:
+      url: https://github.com/ulililzam/flutter_fcm_notifications.git
+      ref: main
+  
   # Utilities
-  intl: ^0.18.0
+  intl: ^0.19.0
   url_launcher: ^6.2.2
   
   # Icons

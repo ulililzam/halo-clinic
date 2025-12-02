@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import '../../../common/themes/colors.dart';
+import '../../../routes/app_routes.dart';
+import '../../notifications/controllers/notification_controller.dart';
 import 'header_widget.dart';
 import 'menu_grid_widget.dart';
 import 'recommendation_section_widget.dart';
@@ -67,16 +70,52 @@ class DashboardWidget extends StatelessWidget {
                           ),
                         ),
                       ),
-                      // Notification Icon
-                      IconButton(
-                        icon: const Icon(Icons.notifications_outlined),
-                        color: Colors.white,
-                        iconSize: 24,
-                        onPressed: () {
-                          // Handle notification tap
+                      // Notification Icon with Badge
+                      GetX<NotificationController>(
+                        init: NotificationController(),
+                        builder: (controller) {
+                          return Stack(
+                            children: [
+                              IconButton(
+                                icon: const Icon(Icons.notifications_outlined),
+                                color: Colors.white,
+                                iconSize: 24,
+                                onPressed: () {
+                                  Get.toNamed(AppRoutes.notifications);
+                                },
+                                padding: EdgeInsets.zero,
+                                constraints: const BoxConstraints(),
+                              ),
+                              if (controller.unreadCount.value > 0)
+                                Positioned(
+                                  right: 0,
+                                  top: 0,
+                                  child: Container(
+                                    padding: const EdgeInsets.all(4),
+                                    decoration: const BoxDecoration(
+                                      color: AppColors.error,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    constraints: const BoxConstraints(
+                                      minWidth: 16,
+                                      minHeight: 16,
+                                    ),
+                                    child: Text(
+                                      controller.unreadCount.value > 99
+                                          ? '99+'
+                                          : '${controller.unreadCount.value}',
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 9,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          );
                         },
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints(),
                       ),
                     ],
                   ),
