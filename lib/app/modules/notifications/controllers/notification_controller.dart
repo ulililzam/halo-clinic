@@ -108,6 +108,9 @@ class NotificationController extends GetxController {
         // TODO: Send token to your backend server
       }
       
+      // Subscribe to topics for broadcast notifications
+      await _subscribeToTopics();
+      
       // Handle foreground messages
       FirebaseMessaging.onMessage.listen((RemoteMessage message) {
         print('Received foreground message: ${message.messageId}');
@@ -134,6 +137,33 @@ class NotificationController extends GetxController {
       });
     } else {
       print('User declined or has not accepted permission');
+    }
+  }
+  
+  Future<void> _subscribeToTopics() async {
+    try {
+      final messaging = FirebaseMessaging.instance;
+      
+      // Subscribe to 'all_users' topic for broadcast notifications
+      await messaging.subscribeToTopic('all_users');
+      print('✓ Subscribed to topic: all_users');
+      
+      // Optional: Subscribe to more specific topics
+      // await messaging.subscribeToTopic('health_tips');
+      // await messaging.subscribeToTopic('appointments');
+      
+    } catch (e) {
+      print('Error subscribing to topics: $e');
+    }
+  }
+  
+  Future<void> unsubscribeFromTopics() async {
+    try {
+      final messaging = FirebaseMessaging.instance;
+      await messaging.unsubscribeFromTopic('all_users');
+      print('✓ Unsubscribed from topic: all_users');
+    } catch (e) {
+      print('Error unsubscribing from topics: $e');
     }
   }
   

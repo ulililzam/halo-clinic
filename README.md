@@ -154,16 +154,7 @@ Home (Bottom Navigation)
 
 - [ ] Integrate dengan backend API
 - [x] Implement push notifications (Firebase FCM)
-- [ ] Add unit tests
-- [ ] Add integration tests
-- [ ] Implement CI/CDe guide
-- Use `const` constructors
-- Implement proper error handling
-- Add comments untuk kode kompleks
-
-## Todo / Roadmap
-
-- [ ] Integrate dengan backend API
+- [x] Topic-based notifications untuk broadcast
 - [ ] Add unit tests
 - [ ] Add integration tests
 - [ ] Implement CI/CD
